@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Sidebar Section -->
+    <div class="sidebar">
+        <div class="logo">
+            <h1>WeatherApp</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Tables</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <!-- Weather Input Section -->
+        <div class="weather-input">
+            <h2>Get Weather</h2>
+            <input type="text" id="city-input" placeholder="Enter city name">
+            <button id="get-weather-btn">Get Weather</button>
+        </div>
+
+        <!-- Weather Widget -->
+        <div class="weather-widget">
+            <h3>Weather Details</h3>
+            <div id="weather-info">
+                <p>City: <span id="city-name"></span></p>
+                <p>Temperature: <span id="temperature"></span></p>
+                <p>Humidity: <span id="humidity"></span></p>
+                <p>Wind Speed: <span id="wind-speed"></span></p>
+                <p>Condition: <span id="weather-condition"></span></p>
+            </div>
+
+            <!-- Error message display -->
+            <p id="error-message" style="color: red; display: none;"></p>
+        </div>
+
+        <!-- 5-Day Weather Forecast Section -->
+        <div class="weather-forecast">
+            <h3>5-Day Weather Forecast</h3>
+            <div id="forecast-container"></div>
+        </div>
+
+        <!-- Weather Forecast Table with Pagination -->
+        <div class="weather-table">
+            <h3>Weather Forecast Table</h3>
+            <table id="forecast-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th><button id="sort-temp-btn">Temperature (°C)</button></th>
+                        <th>Condition</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Table rows will be dynamically added -->
+                </tbody>
+            </table>
+            <div id="pagination">
+                <button id="prev-page-btn" disabled>Previous</button>
+                <span id="page-info"></span>
+                <button id="next-page-btn">Next</button>
+            </div>
+        </div>
+
+        <!-- Sorting and Filtering -->
+        <div class="filter-sort-section">
+            <h3>Sort & Filter</h3>
+            <label for="condition-filter">Filter by Condition:</label>
+            <select id="condition-filter">
+                <option value="">All</option>
+                <option value="Rain">Rain</option>
+                <option value="Clear">Clear</option>
+                <option value="Clouds">Clouds</option>
+            </select>
+            <button id="filter-btn">Apply Filter</button>
+            <button id="clear-filter-btn">Clear Filter</button>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-container">
+            <!-- Bar Chart for Temperature -->
+            <h3>Temperature (Next 5 Days)</h3>
+            <canvas id="barChart"></canvas>
+        
+            <!-- Doughnut Chart for Weather Conditions -->
+            <h3>Weather Conditions (Next 5 Days)</h3>
+            <canvas id="doughnutChart"></canvas>
+        
+            <!-- Line Chart for Temperature Trends -->
+            <h3>Temperature Trends (Next 5 Days)</h3>
+            <canvas id="lineChart"></canvas>
+        </div>
+        
+        <!-- Chatbot Section -->
+        <div class="chatbot">
+            <h3>Chat with Gemini</h3>
+            <div id="chatbot-container">
+                <!-- Chatbot widget will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- External scripts -->
+    <script src="script.js"></script>
+    <script src="chart.js"></script>
+</body>
+</html>
