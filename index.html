@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forecastly - Weather Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Side menu  -->
+    <aside class="sidebar">
+        <div class="logo">
+            <h1>Forecastly</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="table.html">Tables</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content of Weather  Details and Widgets -->
+    <main class="main-content">
+
+        <!-- ENter City Bar  -->
+        <section class="weather-input">
+            <h2>Get Weather</h2>
+            <input type="text" id="city-input" placeholder="Enter city name">
+            <button id="get-weather-btn">Get Weather</button>
+        </section>
+
+        <!-- Display Weather detials Sections -->
+        <section id="weather-widget" class="weather-widget">
+            <h3>Weather Details</h3>
+            <div id="weather-info">
+                <p>City: <span id="city-name"></span></p>
+                <p>Temperature: <span id="temperature"></span></p>
+                <p>Humidity: <span id="humidity"></span></p>
+                <p>Wind Speed: <span id="wind-speed"></span></p>
+                <p>Condition: <span id="weather-condition"></span></p>
+            </div>
+        </section>
+
+        <!-- Charts sections -->
+        <section id="charts-container" class="charts-container" style="display: none;">
+            <div class="chart-row">
+                <div class="chart">
+                    <canvas id="barChart"></canvas>
+                </div>
+                <div class="chart">
+                    <canvas id="doughnutChart"></canvas>
+                </div>
+            </div>
+            <div class="chart-row">
+                <div class="chart">
+                    <canvas id="lineChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <script src="chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
