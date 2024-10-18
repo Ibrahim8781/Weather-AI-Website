@@ -11,11 +11,9 @@ Weather Forecast and Chatbot Application
 Project Overview
 This project is a Weather Forecast and Chatbot Application that allows users to:
 
-
 Fetch and Display Current Weather :
 
 Users can enter a city name, and the application will fetch and display the current weather data (temperature, humidity, wind speed, etc.) for that location using the OpenWeather API.
-
 
 5-Day Weather Forecast:
 
